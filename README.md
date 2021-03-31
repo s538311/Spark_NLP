@@ -40,5 +40,26 @@ nservers=  4
 sc.parallelize(words,nservers)
 print(type(rddData))
 rddIntermediateKVPairs = rddData.map(lambda w:(w,1))
-print(rddIntermediateKVPairs.collect()
+
+print(rddIntermediateKVPairs.collect())
+
+rddFinal=rddIntermediateKVPairs.reduceByKey(lambda acc, value : acc+value )
+
+print(rddFinal.collect())
+
+result = rddFinal.collect()
+
+print(type(result))
+
+-- 
+words = ["one","fish","two","fish","red","fish","blue","fish"]
+nservers=  4
+sc.parallelize(words,nservers)
+
+resultList = rddData.map(lambda word:(word,1).reduceByKey(lambda acc:value:acc+value).collect()
+r = rddData.map().reduceByKey().collect()
+print(resultList)
+
+
+
 
