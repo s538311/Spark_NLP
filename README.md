@@ -51,7 +51,9 @@ result = rddFinal.collect()
 
 print(type(result))
 
--- 
+##
+
+
 words = ["one","fish","two","fish","red","fish","blue","fish"]
 nservers=  4
 sc.parallelize(words,nservers)
